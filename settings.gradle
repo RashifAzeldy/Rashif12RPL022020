@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "Rashif12RPL022020"
