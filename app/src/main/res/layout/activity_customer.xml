@@ -9,7 +9,7 @@
     tools:context=".CustomerActivity">
 
     <TextView
-        android:text="Logged in as Customer"
+        android:text="You Logged in as Customer"
         android:textSize="20dp"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"

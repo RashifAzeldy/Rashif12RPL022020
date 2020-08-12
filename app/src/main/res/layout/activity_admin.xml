@@ -9,7 +9,7 @@
     tools:context=".Admin">
 
     <TextView
-        android:text="Logged in as Admin"
+        android:text="You Logged in as Admin"
         android:textSize="20dp"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
