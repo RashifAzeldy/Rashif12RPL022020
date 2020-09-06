@@ -3,117 +3,115 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
     tools:context=".Registration">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="BACK"
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/BicycleIcon"
         />
-    <TextView
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="REGISTRATION PAGE"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:layout_marginTop="15dp"
-        android:textColor="@android:color/black"
-        />
-    <TextView
+        android:layout_marginHorizontal="20dp">
+
+        <EditText
+            android:id="@+id/txtNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="11dp"
-        android:text="Nama"
-        android:textColor="@android:color/black"
-        />
-    <EditText
+        android:layout_marginHorizontal="20dp">
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:hint="Nama Lengkap"
-        android:id="@+id/txtNama"
-        />
-    <TextView
+        android:layout_marginHorizontal="20dp"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="11dp"
-        android:text="Email"
-        android:textColor="@android:color/black"
-        />
-    <EditText
+        android:layout_marginHorizontal="20dp">
+
+        <EditText
+            android:id="@+id/txtNoKTP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nomor KTP"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:hint="Example@email.com"
-        android:inputType="textEmailAddress"
-        android:id="@+id/txtEmail"/>
-    <TextView
+        android:layout_marginHorizontal="20dp">
+
+        <EditText
+            android:id="@+id/txtNoHP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nomor Hp"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="11dp"
-        android:text="Password"
-        android:textColor="@android:color/black"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:id="@+id/txtPassword"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="11dp"
-        android:text="No. KTP"
-        android:textColor="@android:color/black"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:hint="Nomor KTP"
-        android:id="@+id/txtNoKtp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="11dp"
-        android:text="No. HP"
-        android:textColor="@android:color/black"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:hint="example: +62 99182192139"
-        android:id="@+id/txtNoHp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="11dp"
-        android:text="Alamat"
-        android:textColor="@android:color/black"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="10dp"
-        android:hint="Alamat"
-        android:id="@+id/txtAlamat"/>
+        android:layout_marginHorizontal="20dp">
+
+        <EditText
+            android:id="@+id/txtAlamat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Alamat"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
         android:id="@+id/btnRegister"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginHorizontal="35dp"
-        android:text="Register"/>
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="50dp"
+        android:textColor="@android:color/white"
+        android:background="#1b124d"
+        android:text="Register"
+        />
+
 </LinearLayout>

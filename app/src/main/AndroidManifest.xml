@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DashboardMenu"></activity>
+        <activity android:name=".ItemView"></activity>
+        <activity android:name=".DashboardMenu" />
         <activity android:name=".Dashboard" />
         <activity android:name=".Registration" />
         <activity android:name=".CustomerActivity" />

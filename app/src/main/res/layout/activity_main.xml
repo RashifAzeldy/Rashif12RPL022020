@@ -6,27 +6,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     tools:context=".MainActivity">
 
-    <EditText
-        android:hint="Username"
-        android:id="@+id/txtusername"
-        android:layout_marginTop="50dp"
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/BicycleIcon"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginHorizontal="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:hint="Email"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
-    <EditText
-        android:hint="Password"
-        android:id="@+id/txtpassword"
-        android:inputType="textPassword"
-        android:layout_marginTop="15dp"
+        app:passwordToggleEnabled="true">
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Password"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_marginTop="45dp"
+        android:text="Login"
+        android:textColor="@android:color/white"
+        android:background="#1b124d"
+        android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
     <Button
-        android:text="Login"
-        android:id="@+id/btnlogin"
+        android:id="@+id/btnRegister"
+        android:text="Register"
         android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"
+        android:background="#1b124d"
+        android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         />
