@@ -1,71 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:orientation="vertical"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="50dp"
-        android:src="@drawable/BicycleIcon"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/bicon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:text="Rental Sepeda"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginHorizontal="20dp"
+        android:id="@+id/textfieldEmail"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="30dp">
 
         <EditText
-            android:id="@+id/txtEmail"
+            android:id="@+id/loginEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"
             android:hint="Email"
-            />
-
+            android:inputType="textEmailAddress"
+            android:padding="15dp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginHorizontal="20dp"
+        android:id="@+id/textfieldPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/textfieldEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         app:passwordToggleEnabled="true">
 
         <EditText
-            android:id="@+id/etPassword"
-            android:layout_marginTop="10dp"
+            android:id="@+id/loginPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
+            android:layout_gravity="center"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="50dp"
             android:hint="Password"
-            />
+            android:inputType="textPassword"
+            android:padding="15dp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_marginTop="45dp"
-        android:text="Login"
-        android:textColor="@android:color/white"
-        android:background="#1b124d"
-        android:layout_marginHorizontal="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
-    <Button
-        android:id="@+id/btnRegister"
-        android:text="Register"
+        android:layout_marginHorizontal="20dp"
         android:layout_marginTop="20dp"
-        android:textColor="@android:color/white"
-        android:background="#1b124d"
-        android:layout_marginHorizontal="20dp"
+        android:background="#322dcc"
+        android:hint="Login"
+        android:textColorHint="#fff" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        />
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="15dp"
+            android:text="Doesn't Have Account ?"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:background="#322dcc"
+            android:hint="Register"
+            android:textColorHint="#fff" />
+    </LinearLayout>
 </LinearLayout>
