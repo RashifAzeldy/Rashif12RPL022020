@@ -27,7 +27,7 @@ public class DataListActivity extends AppCompatActivity implements SwipeRefreshL
     private RecyclerView recyclerView;
     private Adapter adapter;
     private SwipeRefreshLayout refreshLayout;
-    private ArrayList<model> rentalArraylist;
+    private ArrayList<ModelUser> rentalArraylist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class DataListActivity extends AppCompatActivity implements SwipeRefreshL
 
     private void getDataFromRemote() {
         refreshLayout.setRefreshing(true);
-        AndroidNetworking.post(BaseURL.url + "GetData.php")
+        AndroidNetworking.post(BaseURL.url + "GetDataCustomer.php")
                 .setTag("test")
                 .setPriority(Priority.LOW)
                 .build()
@@ -66,7 +66,7 @@ public class DataListActivity extends AppCompatActivity implements SwipeRefreshL
 
                                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                                 Log.i("jsonobject", "onResponse: " + jsonObject);
-                                model item = new model();
+                                ModelUser item = new ModelUser();
 
                                 item.setId(jsonObject.optString("id"));
                                 item.setRoleUser(jsonObject.optString("roleUser"));

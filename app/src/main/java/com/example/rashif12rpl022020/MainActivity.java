@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         btnlog = findViewById(R.id.btnLogin);
         btnreg = findViewById(R.id.btnRegister);
 
-
         sharedPreferences = getSharedPreferences("login", MODE_PRIVATE);
         sharedPreferences.edit().putString("logged", sharedPreferences.getString("logged", "missing")).apply();
 

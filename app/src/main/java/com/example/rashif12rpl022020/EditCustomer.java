@@ -18,13 +18,14 @@ import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.JSONObjectRequestListener;
 
 import org.json.JSONObject;
+import org.json.JSONException;
 
 import java.util.HashMap;
 
 public class EditCustomer extends AppCompatActivity {
 
-    EditText textemail, txtnama, txtnohp, txtalamat, txtnoktp;
-    Button btnedit;
+    EditText edEmail, edNama, edNoHP, edAlamat, edNoKTP;
+    Button btnedit, btndelete;
 
 
     @Override
@@ -32,11 +33,11 @@ public class EditCustomer extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_customer);
 
-        textemail = findViewById(R.id.editEmail);
-        txtnama = findViewById(R.id.editNama);
-        txtnohp = findViewById(R.id.editNoHP);
-        txtalamat = findViewById(R.id.editAlamat);
-        txtnoktp = findViewById(R.id.editNoKTP);
+        edEmail = findViewById(R.id.editEmail);
+        edNama = findViewById(R.id.editNama);
+        edNoHP = findViewById(R.id.editNoHP);
+        edAlamat = findViewById(R.id.editAlamat);
+        edNoKTP = findViewById(R.id.editNoKTP);
         btnedit = findViewById(R.id.btn_edit);
 
         Bundle extras = getIntent().getExtras();
@@ -47,22 +48,22 @@ public class EditCustomer extends AppCompatActivity {
         final String alamat = extras.getString("alamat");
         final String noktp = extras.getString("noktp");
 
-        txtnama.setText(nama);
-        textemail.setText(email);
-        txtnohp.setText(nohp);
-        txtalamat.setText(alamat);
-        txtnoktp.setText(noktp);
+        edNama.setText(nama);
+        edEmail.setText(email);
+        edNoHP.setText(nohp);
+        edAlamat.setText(alamat);
+        edNoKTP.setText(noktp);
 
         btnedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 HashMap<String, String> body = new HashMap<>();
                 body.put("id", Id);
-                body.put("nama", txtnama.getText().toString());
-                body.put("nohp", txtnohp.getText().toString());
-                body.put("noktp", txtnoktp.getText().toString());
-                body.put("email", textemail.getText().toString());
-                body.put("alamat", txtalamat.getText().toString());
+                body.put("nama", edNama.getText().toString());
+                body.put("nohp", edNoHP.getText().toString());
+                body.put("noktp", edNoKTP.getText().toString());
+                body.put("email", edEmail.getText().toString());
+                body.put("alamat", edAlamat.getText().toString());
 
                 AndroidNetworking.post(BaseURL.url + "Update.php")
                         .addBodyParameter(body)
@@ -93,6 +94,42 @@ public class EditCustomer extends AppCompatActivity {
                                 Log.d("A", "onError: " + anError.getResponse());
                                 Log.d("A", "onError: " + anError.getErrorCode());
 
+                            }
+                        });
+            }
+        });
+
+        btndelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AndroidNetworking.post(BaseURL.url + "deleteCostumer.php")
+                        .addBodyParameter("id", Id)
+                        .setPriority(Priority.LOW)
+                        .build()
+                        .getAsJSONObject(new JSONObjectRequestListener() {
+                            @Override
+                            public void onResponse(JSONObject response) {
+                                Log.d("onResponse" , "Edited");
+
+                                try {
+                                    JSONObject hasil = response.getJSONObject("hasil");
+                                    boolean sukses = hasil.getBoolean("respon");
+                                    if (sukses) {
+                                        Intent returnIntent = new Intent(EditCustomer.this, DataListActivity.class);
+                                        startActivity(returnIntent);
+                                        finish();
+                                        Toast.makeText(EditCustomer.this, "Delete Suskses", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(EditCustomer.this, "Delete Gagal", Toast.LENGTH_SHORT).show();
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+
+                            @Override
+                            public void onError(ANError anError) {
+                                Log.d("OnResponse", "No Connection");
                             }
                         });
             }

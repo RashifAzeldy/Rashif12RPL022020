@@ -1,6 +1,6 @@
 package com.example.rashif12rpl022020;
 
-public class model {
+public class ModelUser {
     private String id;
     private String email;
     private String password;
@@ -9,7 +9,7 @@ public class model {
     private String alamat;
     private String noKTP;
 
-    public model() {
+    public ModelUser() {
 
     }
 
@@ -70,14 +70,14 @@ public class model {
     }
 
     public String getRoleUser() {
-        return role_user;
+        return roleUser;
     }
 
-    public void setRoleUser(String role_user) {
-        this.role_user = role_user;
+    public void setRoleUser(String roleUser) {
+        this.roleUser = roleUser;
     }
 
-    private String role_user;
+    private String roleUser;
 
 }
 

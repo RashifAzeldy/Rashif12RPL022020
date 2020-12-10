@@ -11,7 +11,7 @@ import android.widget.Button;
 
 public class AdminActivity extends AppCompatActivity {
 
-    Button userButton, transaksiButton, sepedaButton;
+    Button userButton, transaksiButton, editSepeda, insertSepeda;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,8 @@ public class AdminActivity extends AppCompatActivity {
 
         userButton = findViewById(R.id.user);
         transaksiButton = findViewById(R.id.transaksi);
-        sepedaButton = findViewById(R.id.sepeda);
+        editSepeda = findViewById(R.id.editSepeda);
+        insertSepeda = findViewById(R.id.insertSepeda);
 
         userButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +29,22 @@ public class AdminActivity extends AppCompatActivity {
                 Intent i = new Intent(AdminActivity.this, DataListActivity.class);
                 startActivity(i);
                 finish();
+            }
+        });
+
+        editSepeda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminActivity.this, SepedaList.class);
+                startActivity(intent);
+            }
+        });
+
+        insertSepeda.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(AdminActivity.this, InsertDataSepeda.class);
+                startActivity(intent);
             }
         });
     }

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".EditDataSepeda">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="25dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="EDIT DATA SEPEDA"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:layout_marginBottom="15dp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID"
+            android:textSize="20sp"
+            android:id="@+id/tvIdDataSepeda"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kode Sepeda"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/txtKode"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Merk Sepeda"
+            android:layout_marginBottom="10dp"
+            android:inputType="textEmailAddress"
+            android:id="@+id/txtMerk"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Jenis Sepeda"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/txtJenis"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Warna Sepeda"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/txtWarna"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Harga Sewa"
+            android:id="@+id/txtHargaSewa"/>
+        <Button
+            android:id="@+id/btnEditDataSepeda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@android:color/white"
+            android:background="#322dcc"
+            android:text="Edit Data"/>
+        <Button
+            android:id="@+id/btnDeleteDataSepeda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:background="#322dcc"
+            android:text="Delete Data"/>
+
+    </LinearLayout>
+
+</LinearLayout>

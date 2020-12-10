@@ -23,17 +23,27 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:background="#322dcc"
-        android:text="DATA USER"
+        android:text="LIST DATA USER"
         android:textColor="#fff" />
 
     <Button
-        android:id="@+id/sepeda"
+        android:id="@+id/insertSepeda"
         android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:background="#322dcc"
-        android:text="DATA SEPEDA"
+        android:text="INSERT DATA SEPEDA"
+        android:textColor="#fff" />
+
+    <Button
+        android:id="@+id/editSepeda"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="#322dcc"
+        android:text="EDIT DATA SEPEDA"
         android:textColor="#fff" />
 
     <Button

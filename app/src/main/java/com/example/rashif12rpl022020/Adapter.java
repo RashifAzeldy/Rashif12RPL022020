@@ -13,9 +13,9 @@ import java.util.ArrayList;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.RentalViewHolder> {
 
-    private ArrayList<model> datalist;
+    private ArrayList<ModelUser> datalist;
 
-    public Adapter(ArrayList<model> datalist) {
+    public Adapter(ArrayList<ModelUser> datalist) {
         this.datalist = datalist;
     }
 
